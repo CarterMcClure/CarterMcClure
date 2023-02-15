@@ -22,7 +22,7 @@ function startGame(){
   canvas.style.display = "flex";
   gameOver.style.display ="none";
   scoreboard.style.display = "inline"; 
-  
+
   score1 = 0;
   score2 = 0;
   document.getElementById('p1').innerHTML = score1;
@@ -40,7 +40,7 @@ function endGame(){
   gameOver.style.display ="block";
   scoreboard.style.display = "none";
 
-  
+
   animate = false;
 }
 
@@ -64,7 +64,7 @@ function aiMovement(ball, rightPaddle){
     if(ball.y < rightPaddle.y){
       rightPaddle.dy = -aiSpeed;
       rightPaddle.y += rightPaddle.dy;
-  
+
       if(rightPaddle.y <= grid){
         rightPaddle.y = grid;
       }
@@ -142,12 +142,7 @@ function loop() {
     rightPaddle.y = maxPaddleY;
   }
   
-  // Score Builder
-  context.font ="50px solid";
-  context.fillText(score2, 150, 100);
-
-  context.font ="50px solid";
-  context.fillText(score1, 550, 100);
+  
 
   // draw paddles
   context.fillStyle = 'white';
