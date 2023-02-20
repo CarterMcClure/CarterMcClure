@@ -27,7 +27,7 @@ function startGame(){
 
   if (animate == false) {
     animate = true;
-    requestAnimationFrame(requestAnimationFrame);
+    requestAnimationFrame(loop);
   }
 }
 
