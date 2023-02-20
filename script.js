@@ -25,10 +25,10 @@ function startGame(){
   score2 = 0;
   
 
-  if (animate == false) {
+ 
     animate = true;
     requestAnimationFrame(loop);
-  }
+  
 }
 
 function endGame(){
