@@ -17,19 +17,7 @@ var score2 = 0; // Left Paddle Score
 
 function startGame(){
   
-  gameStart.style.display = "none";
-  canvas.style.display = "flex";
-  gameOver.style.display ="none";
-  scoreboard.style.display = "inline"; 
-
-  score1 = 0;
-  score2 = 0;
-  
-
-  if (animate == false) {
-    animate = true;
-    requestAnimationFrame(requestAnimationFrame);
-  }
+  location.reload();
 
   
 }
