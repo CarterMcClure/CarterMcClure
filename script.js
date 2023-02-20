@@ -139,12 +139,13 @@ function loop() {
     rightPaddle.y = maxPaddleY;
   }
   
+
   context.font ="50px solid";
   context.fillText(score1, 150, 100);
 
   context.font ="50px solid";
   context.fillText(score2, 550, 100);
-  
+
 
   // draw paddles
   context.fillStyle = 'white';
