@@ -16,18 +16,7 @@ var score1 = 0; // Right Paddle Score
 var score2 = 0; // Left Paddle Score
 
 function startGame(){
-  gameStart.style.display = "none";
-  canvas.style.display = "flex";
-  gameOver.style.display ="none";
-  scoreboard.style.display = "inline"; 
-
-  score1 = 0;
-  score2 = 0;
-  
-
- 
-    animate = true;
-    requestAnimationFrame(loop);
+  location.reload();
   
 }
 
