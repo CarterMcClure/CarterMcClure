@@ -14,19 +14,16 @@ var animate = true;
 
 var score1 = 0; // Right Paddle Score
 var score2 = 0; // Left Paddle Score
-document.getElementById('p1').innerHTML = score1;
-document.getElementById('p2').innerHTML = score2; 
 
 function startGame(){
   gameStart.style.display = "none";
   canvas.style.display = "flex";
   gameOver.style.display ="none";
   scoreboard.style.display = "inline"; 
-  
+
   score1 = 0;
   score2 = 0;
-  document.getElementById('p1').innerHTML = score1;
-  document.getElementById('p2').innerHTML = score2;
+  
 
   if (animate == false) {
     animate = true;
@@ -40,7 +37,7 @@ function endGame(){
   gameOver.style.display ="block";
   scoreboard.style.display = "none";
 
-  
+
   animate = false;
 }
 
@@ -64,7 +61,7 @@ function aiMovement(ball, rightPaddle){
     if(ball.y < rightPaddle.y){
       rightPaddle.dy = -aiSpeed;
       rightPaddle.y += rightPaddle.dy;
-  
+
       if(rightPaddle.y <= grid){
         rightPaddle.y = grid;
       }
@@ -142,7 +139,12 @@ function loop() {
     rightPaddle.y = maxPaddleY;
   }
   
- 
+  context.font ="50px solid";
+  context.fillText(score1, 150, 100);
+
+  context.font ="50px solid";
+  context.fillText(score2, 550, 100);
+  
 
   // draw paddles
   context.fillStyle = 'white';
@@ -169,11 +171,11 @@ function loop() {
     
     if(ball.x < 0) {
     ++score1; // Right Paddle Score
-    document.getElementById('p1').innerHTML = score1;
+   
     }
     if(ball.x > canvas.width) {
     ++score2; // Left Paddle Score
-    document.getElementById('p2').innerHTML = score2; 
+     
     }
 
     //aiMovement(ball, rightPaddle);
@@ -247,3 +249,4 @@ document.addEventListener('keyup', function(e) {
 if(animate == true){
   requestAnimationFrame(loop);
 }
+
