@@ -6,6 +6,7 @@ const context = canvas.getContext('2d');
 const grid = 15;
 const paddleHeight = grid * 5; // 80
 const maxPaddleY = canvas.height - grid - paddleHeight;
+const difficulty = localStorage.getItem("difficulty");
 
 var aiSpeed = 1.25;
 const paddleSpeed = 6;
@@ -34,20 +35,14 @@ function checkScore(){
 }
 
 function aiMovement(ball, rightPaddle){
-  if(form.value == "easy") {
+  if(difficulty == "easy") {
     aiSpeed = 1;
     ballSpeed = 4;
-    localStorage.setItem("aiSpeed", "1");
-    localStorage.setItem("ballSpeed", "4");
   }
-  else if(form.value == "hard") {
+  else if(difficulty == "hard") {
     aiSpeed = 1.5;
     ballSpeed = 6;
-    localStorage.setItem("aiSpeed", "1.5");
-    localStorage.setItem("ballSpeed", "6");
   }
-  aiSpeed= localStorage.getItem("aiSpeed");
-  ballSpeed= localStorage.getItem("ballSpeed");
   if(ball.dx > 0){
     if(ball.y > rightPaddle.y){
       rightPaddle.dy = aiSpeed;
