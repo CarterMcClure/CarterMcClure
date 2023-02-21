@@ -7,6 +7,7 @@ const grid = 15;
 const paddleHeight = grid * 5; // 80
 const maxPaddleY = canvas.height - grid - paddleHeight;
 const difficulty = localStorage.getItem("difficulty");
+console.log(difficulty);
 
 var aiSpeed = 1.25;
 const paddleSpeed = 6;
