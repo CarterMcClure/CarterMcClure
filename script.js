@@ -36,13 +36,12 @@ function checkScore(){
 }
 
 function aiMovement(ball, rightPaddle){
- console.log(difficulty);
-console.log("test");
-  if(difficulty == "easy") {
+ console.log(difficulty === "easy");
+  if(difficulty === "easy") {
     aiSpeed = 1;
     ballSpeed = 4;
   }
-  else if(difficulty == "hard") {
+  else if(difficulty === "hard") {
     aiSpeed = 1.5;
     ballSpeed = 6;
   }
