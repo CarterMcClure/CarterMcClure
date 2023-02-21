@@ -6,12 +6,25 @@ const context = canvas.getContext('2d');
 const grid = 15;
 const paddleHeight = grid * 5; // 80
 const maxPaddleY = canvas.height - grid - paddleHeight;
+
+const paddleSpeed = 6;
+var animate = true;
+
 const difficulty = localStorage.getItem("difficulty");
 
-var aiSpeed = 1.25;
-const paddleSpeed = 6;
-var ballSpeed = 5;
-var animate = true;
+// Settings for the game depending on difficulty selected
+if(difficulty == "easy") {
+    var aiSpeed = 0.8;
+    var ballSpeed = 4;
+  } // easy
+  else if(difficulty == "hard") {
+    var aiSpeed = 1.75;
+    var ballSpeed = 7;
+  } // hard
+  else {
+    var aiSpeed = 1.25;
+    var ballSpeed = 6
+  } // normal
 
 var score1 = 0; // Right Paddle Score
 var score2 = 0; // Left Paddle Score
@@ -35,14 +48,6 @@ function checkScore(){
 }
 
 function aiMovement(ball, rightPaddle){
-  if(difficulty == "easy") {
-    aiSpeed = 1;
-    ballSpeed = 4;
-  }
-  else if(difficulty == "hard") {
-    aiSpeed = 1.5;
-    ballSpeed = 6;
-  }
   if(ball.dx > 0){
     if(ball.y > rightPaddle.y){
       rightPaddle.dy = aiSpeed;
