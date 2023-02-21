@@ -7,8 +7,7 @@ const grid = 15;
 const paddleHeight = grid * 5; // 80
 const maxPaddleY = canvas.height - grid - paddleHeight;
 const difficulty = localStorage.getItem("difficulty");
-console.log(difficulty);
-console.log("test");
+
 
 var aiSpeed = 1.25;
 const paddleSpeed = 6;
@@ -37,6 +36,8 @@ function checkScore(){
 }
 
 function aiMovement(ball, rightPaddle){
+ console.log(difficulty);
+console.log("test");
   if(difficulty == "easy") {
     aiSpeed = 1;
     ballSpeed = 4;
