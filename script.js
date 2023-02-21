@@ -46,8 +46,8 @@ function aiMovement(ball, rightPaddle){
     localStorage.setItem("aiSpeed", "1.5");
     localStorage.setItem("ballSpeed", "6");
   }
-  aiSpeed= localStorage.getItem("myVariable");
-  ballSpeed= localStorage.getItem("myVariable");
+  aiSpeed= localStorage.getItem("aiSpeed");
+  ballSpeed= localStorage.getItem("ballSpeed");
   if(ball.dx > 0){
     if(ball.y > rightPaddle.y){
       rightPaddle.dy = aiSpeed;
