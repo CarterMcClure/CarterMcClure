@@ -37,17 +37,11 @@ function aiMovement(ball, rightPaddle){
   if(form.value == "easy") {
     aiSpeed = 1;
     ballSpeed = 4;
-    localStorage.setItem("aiSpeed", "1");
-    localStorage.setItem("ballSpeed", "4");
   }
   else if(form.value == "hard") {
     aiSpeed = 1.5;
     ballSpeed = 6;
-    localStorage.setItem("aiSpeed", "1.5");
-    localStorage.setItem("ballSpeed", "6");
   }
-  aiSpeed= localStorage.getItem("aiSpeed");
-  ballSpeed= localStorage.getItem("ballSpeed");
   if(ball.dx > 0){
     if(ball.y > rightPaddle.y){
       rightPaddle.dy = aiSpeed;
