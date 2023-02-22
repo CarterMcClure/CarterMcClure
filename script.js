@@ -7,6 +7,11 @@ const grid = 15;
 const paddleHeight = grid * 5; // 80
 const maxPaddleY = canvas.height - grid - paddleHeight;
 
+
+
+
+var aiSpeed = 1.25;
+
 const paddleSpeed = 6;
 var animate = true;
 
@@ -48,6 +53,18 @@ function checkScore(){
 }
 
 function aiMovement(ball, rightPaddle){
+
+  const difficulty = localStorage.getItem("difficulty");
+ console.log(difficulty === "easy");
+  if(difficulty === "easy") {
+    aiSpeed = 1;
+    ballSpeed = 4;
+  }
+  else if(difficulty === "hard") {
+    aiSpeed = 1.5;
+    ballSpeed = 6;
+  }
+
   if(ball.dx > 0){
     if(ball.y > rightPaddle.y){
       rightPaddle.dy = aiSpeed;
